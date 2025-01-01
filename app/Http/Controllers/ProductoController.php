@@ -90,26 +90,67 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(ProductoModel $producto)
     {
-        //
+        
+        
+        return view("producto.productoedit", ['producto'=>$producto]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProductoModel $producto, Request $request)
     {
-        //
+        $data = $request->validate([
+            "nombre_producto" => ['required'],
+            "precio_producto" => ['required'],
+            "stock_producto" => ['required'],
+            "descripcion_producto" => ['required'],
+            'categoria_id' => ['required', 'integer', 'not_in:""'],
+            "imagen_producto" => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'], // Validación para la imagen
+        ], [
+            "nombre_producto.required" => "Falta completar este campo!",
+            "precio_producto.required" => "Falta completar este campo!",
+            "stock_producto.required" => "Falta completar este campo!",
+            "descripcion_producto.required" => "Falta completar este campo!",
+            "categoria_id.required" => "Falta completar este campo!",
+            "categoria_id.not_in" => "Falta completar este campo!",
+            "imagen_producto.required" => "Falta subir una imagen!",
+            "imagen_producto.image" => "El archivo debe ser una imagen!",
+            "imagen_producto.mimes" => "La imagen debe estar en formato jpeg, png, jpg o gif!",
+            "imagen_producto.max" => "La imagen no puede superar los 2 MB!",
+        ]);
+        
+        // Establecemos donde va a estar la direccion de la foto
+        $rutaImagen = $request->file('imagen_producto')->store('imagenes.Productos', 'public'); // Almacena en storage/app/public/images/Productos
+        $data['imagen_producto'] = $rutaImagen;
+
+        $producto->nombre_producto = $data["nombre_producto"];
+        $producto->precio_producto = $data["precio_producto"];
+        $producto->stock_producto = $data["stock_producto"];
+        $producto->descripcion_producto = $data["descripcion_producto"];
+        $producto->imagen_producto = $data["imagen_producto"];
+
+        $producto->save();
+     
+        return response()->redirectTo("panelproductos")->with('success', 'Producto Actualizado exitosamente!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(ProductoModel $producto)
     {
-        //
+       $respuesta = $producto->delete();
+
+       if($respuesta){
+            return redirect("/panelproductos")->with("success", "Se elimino el producto correctamente");
+       }else{
+            return redirect("/producto")->with("fail" ,"No se pudo eliminar");
+       }
     }
+    
 
     
 }

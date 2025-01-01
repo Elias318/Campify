@@ -28,6 +28,9 @@
     <link rel="stylesheet" href={{ asset('css/carrito.css') }}>
     <link rel="stylesheet" href={{ asset('css/finalizarCompra.css') }}>
     <link rel="stylesheet" href={{ asset('css/agradecimiento.css') }}>
+    <link rel="stylesheet" href={{ asset('css/panelproductos.css') }}>
+
+
 
 
     <!-- Fuente de Iconos -->
@@ -91,7 +94,7 @@
                             </li>
                         @elseif (auth()->user()->rol === 'Admin')
                             <li class="nav-item ajuste-item-nav-md">
-                                <a class="nav-link active colorLetras" href="{{ route('agregarproducto') }}">Admin</a>
+                                <a class="nav-link active colorLetras" href="{{ route('panelproductos') }}">Panel</a>
                             </li>
                         @endif
                             <li>

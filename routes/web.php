@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ComentarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -57,7 +58,25 @@ Route::patch('/carrito/disminuir', [CarritoController::class, 'disminuir'])->nam
 
 Route::get('/finalizarcompra', [FinalizarCompraController::class, 'finalizarCompra'])->name('finalizarcompra');
 Route::post('/finalizarcompra/agradecimiento', [FinalizarCompraController::class, 'compraFinalizada'])->name('finalizarcompra.agradecimiento');
-// Route::get('/agradecimiento', [FinalizarCompraController::class, 'mostrarAgradecimiento'])->name('agradecimiento');
+
+Route::get('/panelproductos', [AdminController::class, 'mostrarPanel'])->name('panelproductos');
+
+
+
+Route::get('/producto/{producto}/edit', [ProductoController::class, 'edit'])->name('producto.edit');
+Route::put('/producto/{producto}', [ProductoController::class, 'update'])->name('producto.update');
+Route::delete('/producto/{producto}', [ProductoController::class, 'destroy'])->name('producto.destroy');
+
+/*SI CREO UN RESOURCE CONTROLLER
+
+    Route::resource("producto",ProductoController::class);
+
+    Eta linea equivale a todos los route de la ABM de productos
+*/
+
+
+
+
 
 
 

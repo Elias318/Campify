@@ -1,0 +1,19 @@
+.header-tabla{
+    background-color: #A6C4F7 !important;
+    color: white;
+    font-weight: 700;
+}
+
+.btn-accion{
+    background-color: #A6C4F7;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 100%;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-accion:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
