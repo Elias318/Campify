@@ -1,0 +1,138 @@
+.navbar-custom {
+    background-color: #f8f6ee;
+}
+
+.bg-nav2 {
+    background-color: #e1fcad;
+}
+
+.logo {
+    width: 62x;
+    height: 62px;
+}
+
+.w-ajuste {
+    width: 55%;
+}
+
+.m-ajuste-toggler {
+    margin-right: 50px;
+}
+
+.btn:hover {
+    background-color: #a6c4f7;
+    color: white;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 3px rgba(166, 196, 247, 0.5);
+}
+
+.navbar-toggler {
+    border-color: #a6c4f7;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: 0 0 0 3px #a6c4f7;
+    border-color: #a6c4f7;
+}
+
+.p-ajuste-navbar {
+    padding: 0 !important;
+}
+
+.p-ajuste-logo {
+    padding: 0 !important;
+}
+
+.correccion {
+    margin-left: 115px;
+}
+
+.colorhamburger {
+    color: #a6c4f7 !important;
+}
+
+.colorLetras {
+    color: #659bf8 !important;
+}
+
+.nav-link:hover .colorhamburger {
+    color: #4e8be0 !important;
+}
+
+.m-correccion {
+    margin-top: 0px !important;
+}
+
+@media (max-width: 620px) {
+    #menuArticulos {
+        display: none !important;
+    }
+}
+
+@media (min-width: 620px) {
+    #linksAdicionales {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1050px) and (min-width: 768px) {
+    .w-ajuste {
+        width: 60%;
+    }
+
+    .m-ajuste-logo {
+        padding-left: 10px;
+    }
+
+    .correccion {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .correccion {
+        margin-left: 0px;
+    }
+    .w-ajuste {
+        width: 88%;
+    }
+
+    .border-top-ajuste {
+        border-top: 1px solid rgb(171, 214, 255);
+    }
+
+    .m-ajuste-logo {
+        padding-left: 40px;
+    }
+
+    .ajuste-carrito {
+        margin-left: 30px;
+    }
+
+    .ajuste-item-nav-md {
+        margin-left: 30px;
+    }
+
+    .m-ajuste-form {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 988px) {
+    .m-ajuste-logo {
+        padding-left: 20px;
+    }
+}
+
+@media (min-width: 1320px) {
+    .m-ajuste-sesion {
+        padding-right: 80px;
+    }
+    .m-ajuste-logo {
+        padding-left: 150px;
+    }
+}

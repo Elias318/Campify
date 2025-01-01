@@ -1,0 +1,27 @@
+/* Estilo para envolver todo el contenido, incluyendo el footer */
+html, body {
+    height: 100%; /* Asegura que el contenedor principal ocupe toda la altura */
+    margin: 0;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Empuja el footer hacia la parte inferior */
+}
+
+.footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #adb5bd;
+}
+
+.footer .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+}

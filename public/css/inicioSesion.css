@@ -1,0 +1,63 @@
+.login-container {
+    display: grid;
+    grid-template-columns: 48.7% 51.3%;
+    min-height: 87.4vh; /* Usar min-height en lugar de height */
+    width: 100%;
+}
+
+.vertical-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Añade padding para evitar colapso */
+}
+
+input {
+    margin-top: 0px !important;
+}
+
+.logo-container {
+    background-color: #ffd867;
+}
+
+.logo-container img {
+    max-width: 300px;
+    width: 100%; /* Para adaptarse mejor */
+    height: auto; /* Mantén la proporción */
+}
+
+.borde-form-sesion {
+    border: 1px solid #659bf8;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.w-imagen-inicio {
+    width: 200px;
+}
+
+.color-fondo {
+    background-color: #659bf8 !important;
+}
+
+@media (max-width: 988px) {
+    .login-container {
+        grid-template-columns: 100%;
+    }
+    .logo-container {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .login-container {
+        min-height: auto; /* Permite que se ajuste automáticamente */
+        padding: 20px; /* Añade espacio alrededor */
+        height: 100vh !important; /* Ajusta la altura en pantallas pequeñas */
+
+    }
+
+    .vertical-center {
+        flex-direction: column; /* Coloca los elementos en columna */
+    }
+}

@@ -1,0 +1,489 @@
+
+.contenedor-contenedor-gral{
+    padding: 20px;
+}
+.contenedor-btn-comprar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-comprar{
+    width: 50% ;
+    background-color: #A7C5F8;
+    color: white;
+    font-weight: 700;
+    
+}
+
+.contenedor-datos{
+    padding: 20px;
+    border-radius: 10px;
+    background-color:white ;
+    color: black;
+    border: 1px solid #A7C5F8;
+}
+
+.contenedor-descripcion{
+    padding: 20px;
+}
+.contenedor-comentarios{
+    padding: 20px;
+}
+.contenedor-descripcion h1{
+       
+    font-weight: 700;
+}
+.contenedor-comentarios h1{
+   text-align: center;
+   padding-bottom: 20px;
+    font-weight: 700;
+}
+.contenedor-mensajes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-agregar-comentario button:hover{
+    background-color: white;
+    border: #A7C5F8 solid 1px;
+    color: #A7C5F8;
+    transition: .5s ease;
+}
+.contenedor-inicia-sesion{
+    width: 100%;
+    
+    margin-left: 20px;
+    padding:20px 10px  ;
+    background-color: #A7C5F8;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-inicia-sesion h4{
+    font-weight: 700;
+}
+
+.contenedor-inicia-sesion a{
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: white;
+    font-weight: 600;
+}
+
+.contenedor-inicia-sesion a:hover{
+    transform: scale(1.1); 
+    color: white;
+}
+
+.aviso-sin-comentario{
+    padding: 20px;
+    background-color: #A7C5F8;
+    color: white;
+    font-weight: 700;
+    border-radius: 15px;
+    text-align: center;
+}
+/* Estilo para pantallas grandes */
+@media (min-width: 1025px) {
+    .contenedor-contenedor-gral{
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+    }
+    .contenedor-imagenes{
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .contenedor-datos{
+        width: 25%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color:white ;
+        color: black;
+        border: 1px solid #A7C5F8;
+    }
+   
+    .contenedor-imagen-principal img{
+        width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+        height: 400px; /* La altura será proporcional al ancho */
+        object-fit: contain; /* Asegura que toda la imagen esté visible dentro del contenedor */
+    }
+
+    .contenedor-imagen-principal{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .txt-categoria{
+        font-size: 16px;
+        
+    }
+    .txt-titulo{
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .txt-precio{
+        font-size: 25px;
+    }
+    
+
+    .contenedor-descripcion h1{
+       
+        font-weight: 700;
+    }
+    /*************SECCION COMENTARIOS***************/
+    .contenedor-comentarios{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-mensajes{
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+    .comentario{
+        width: 100%;
+        
+        border: #A7C5F8 solid 1px;
+
+    }
+
+    .burbuja{
+        position: relative;
+        background-color: white;
+        padding: 10px;
+        color: black;
+        border-radius: 3px;
+        margin-left:20px ;
+    }
+    .burbuja:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 15px;
+        margin-left: -25px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 15px solid #A7C5F8;
+
+    }
+    .header-comentario{
+        font-size: 20px;
+    }
+
+    .contenedor-agregar-comentario{
+        width: 450px;
+    }
+    .contenedor-agregar-comentario form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedor-agregar-comentario textarea{
+        width: 100%;
+       height: 100px;
+        margin-left: 20px;
+    }
+    .contenedor-agregar-comentario button{
+        text-align: center;
+        height: 50%;
+        padding: 10px;
+        background-color: #A7C5F8;
+        color: white;
+        font-weight: 700;
+        border-radius: 10px;
+        border: none;
+    }
+}
+
+/* Estilo para tablets*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contenedor-contenedor-gral{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-imagenes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .contenedor-datos{
+        width: 50%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color:white ;
+        color: black;
+        border: 1px solid #A7C5F8;
+    }
+   
+    .contenedor-imagen-principal img{
+        width: 50%; /* La imagen ocupará todo el ancho del contenedor */
+        height: auto; /* La altura será proporcional al ancho */
+        object-fit: contain; /* Asegura que toda la imagen esté visible dentro del contenedor */
+    }
+
+    .contenedor-imagen-principal{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .txt-categoria{
+        font-size: 16px;
+        
+    }
+    .txt-titulo{
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .txt-precio{
+        font-size: 25px;
+    }
+    
+/*************SECCION COMENTARIOS***************/
+    .contenedor-comentarios{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-mensajes{
+        width: 450px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+    .comentario{
+        width: 100%;
+        
+        border: #A7C5F8 solid 1px;
+
+    }
+
+    .burbuja{
+        position: relative;
+        background-color: white;
+        padding: 10px;
+        color: black;
+        border-radius: 3px;
+        margin-left:20px ;
+    }
+    .burbuja:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 15px;
+        margin-left: -25px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 15px solid #A7C5F8;
+
+    }
+    .header-comentario{
+        font-size: 20px;
+    }
+
+    .contenedor-agregar-comentario{
+        width: 450px;
+
+        
+    }
+
+
+    .contenedor-agregar-comentario form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedor-agregar-comentario textarea{
+        width: 100%;
+       height: 100px;
+        margin-left: 20px;
+    }
+    .contenedor-agregar-comentario button{
+        text-align: center;
+        height: 50%;
+        padding: 10px;
+        background-color: #A7C5F8;
+        color: white;
+        font-weight: 700;
+        border-radius: 10px;
+        border: none;
+    }
+
+
+}
+
+/* Estilo mobile*/
+@media (max-width: 767px) {
+    .contenedor-contenedor-gral{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-imagenes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+   
+    .contenedor-imagen-principal img{
+        width: 50%; /* La imagen ocupará todo el ancho del contenedor */
+        height: auto; /* La altura será proporcional al ancho */
+        object-fit: contain; /* Asegura que toda la imagen esté visible dentro del contenedor */
+    }
+
+    .contenedor-imagen-principal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-datos{
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color:white ;
+        color: black;
+        border: 1px solid #A7C5F8;
+    }
+    .txt-categoria{
+        font-size: 16px;
+        
+    }
+    .txt-titulo{
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .txt-precio{
+        font-size: 20px;
+    }
+    
+
+    .contenedor-descripcion h1{
+       
+        font-weight: 700;
+    }
+
+
+    /*************SECCION COMENTARIOS***************/
+    .contenedor-comentarios{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-mensajes{
+        width: 100%;
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+    .comentario{
+        width: 100%;
+        
+        border: #A7C5F8 solid 1px;
+
+    }
+
+    .burbuja{
+        position: relative;
+        background-color: white;
+        padding: 10px;
+        color: black;
+        border-radius: 3px;
+        margin-left:20px ;
+    }
+    .burbuja:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 15px;
+        margin-left: -25px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 15px solid #A7C5F8;
+
+    }
+    .header-comentario{
+        font-size: 20px;
+    }
+
+    .contenedor-agregar-comentario{
+        width: 100%;
+        
+       
+    }
+
+    .contenedor-agregar-comentario form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedor-agregar-comentario textarea{
+        width: 100%;
+       height: 100px;
+        margin-left: 20px;
+    }
+    .contenedor-agregar-comentario button{
+        text-align: center;
+        height: 50%;
+        padding: 10px;
+        background-color: #A7C5F8;
+        color: white;
+        font-weight: 700;
+        border-radius: 10px;
+        border: none;
+    }
+
+   
+}

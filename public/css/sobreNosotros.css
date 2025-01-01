@@ -1,0 +1,149 @@
+.sobreNosotros {
+    background-image: linear-gradient(
+            rgba(166, 196, 247, 0.37),
+            rgb(171, 214, 255)
+        ),
+        url("../images/sobreNosotros/sobrenosotros.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 392px;
+    overflow: hidden;
+}
+
+.filtroBorroso {
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.123);
+    height: 100%;
+    width: 100%;
+}
+
+.vecTam {
+    height: 370px;
+    width: auto;
+}
+
+.vectorIzq {
+    padding-right: 100px;
+    padding-bottom: 120px;
+}
+
+.vectorDer {
+    padding-left: 100px;
+    padding-top: 120px;
+}
+
+.fotoParticipante {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+}
+
+
+/* Clases para JS */
+
+.perfilsm {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.vectorIzq, .vectorDer {
+    transition: transform 0.1s ease-out;
+}
+
+/*****************ANIMACIONES**********************/
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: .4s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Posición final */
+}
+
+.info-itegragnte{
+    text-align: center;
+    
+}
+
+.info-itegragnte a {
+    text-decoration: none;
+    background-color: #A6C4F7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+.info-itegragnte a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.contenedor-integrantes{
+    padding: 20px 0px;
+}
+
+@media (max-width: 767px) {
+    #introSobreNos {
+        width: 75% !important;
+    }
+
+    .vecTam {
+        height: 350px;
+        width: auto;
+    }
+
+    .vectorIzq {
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        position: relative !important;
+        margin: 0 auto !important;
+    }
+
+    .vectorDer {
+        display: none !important;
+    }
+
+    .perfil {
+        width: 80% !important;
+        text-align: center;
+    }
+}
+
+/*@media (max-width: 576px) {
+    .vecTam {
+        height: 270px;
+        width: auto;
+    }
+
+    .perfilsm {
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 988px) {
+    .vecTam {
+        height: 320px;
+        width: auto;
+    }
+
+    .paddingxl {
+        padding-top: 30px;
+    }
+}
+
+@media (min-width: 988px) {
+    .paddingxl {
+        padding-top: 40px;
+    }
+}
+*/

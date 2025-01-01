@@ -1,0 +1,263 @@
+.container-gral {
+    padding: 40px 0px;
+}
+.subtitulo-catalogo {
+    text-align: center !important;
+    font-weight: 500 !important;
+    font-size: 80px;
+}
+
+.container_datos_tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container_btn_tarjeta {
+    display: flex;
+    justify-content: center;
+}
+
+.container_btn_tarjeta_2 a {
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: #ffff;
+    font-weight: 700;
+    background-color: #2e5ba8;
+    border: #071733;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+}
+.container_btn_tarjeta_2 a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn_comprar {
+    text-decoration: none;
+    padding: 10px 20px;
+    text-align: center;
+    color: #ffff;
+    font-weight: 700;
+    background-color: #a7c5f8;
+    border: #a7c5f8;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+}
+
+.btn_meGusta {
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.89);
+    font-weight: 700;
+    background-color: #a7c5f8;
+    border: #a7c5f8;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+}
+
+.btn_Carrito {
+    text-decoration: none;
+    padding: 10px ;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.89);
+    font-weight: 700;
+    background-color: #a7c5f8;
+    border: #a7c5f8;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+}
+
+.btn_Carrito:hover {
+    transform: scale(1.2); /* Efecto de zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn_corazonRoto {
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: #ff5454;
+    font-weight: 700;
+    background-color: #a7c5f8;
+    border: #ff5454;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+}
+
+/* Estado activo: ícono rojo */
+.btn_meGusta.active {
+    background-color: #a7c5f8;
+    color: #ff5454; /* El icono se vuelve rojo */
+}
+
+/* Animación al pasar el mouse */
+.btn_meGusta:hover {
+    transform: scale(1.2); /* Efecto de zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container_btn_tarjeta a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.tarjeta-producto {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tarjeta-producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-producto img {
+    width: 60%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+.tarjeta-producto h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.tarjeta-producto p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.tarjeta-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.tarjeta-link:hover .tarjeta-producto {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+.productos-titulo{
+    color: #5C5C5C;
+}
+
+/* Cosas del filtro */
+.filtro {
+    padding-top: 80px;
+}
+
+.filtro h2{
+    color: #5C5C5C;
+}
+
+.filtro label,
+input {
+    margin-top: 15px;
+}
+
+.btn-filtros{
+    margin-bottom: 70px;
+    text-decoration: none;
+    padding: 10px ;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.89);
+    font-weight: 700;
+    background-color: #a7c5f8;
+    border: #a7c5f8;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    
+}
+
+/* Estilo para bordes de los checkboxes */
+.form-check-input {
+    border: 2px solid black;
+    width: 1.2rem; /* Aumenta el tamaño si lo deseas */
+    height: 1.2rem;
+}
+
+/* Animaciones con js */
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 0.2em;
+}
+
+
+
+/* Estilo para pantallas grandes */
+@media (min-width: 1025px) {
+    .container_tarjetas {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        padding-left: 60px;
+        padding-bottom: 60px;
+        gap: 20px;
+    }
+
+    
+}
+
+/* Estilo para tablets*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container_tarjetas {
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        gap: 20px;
+    }
+}
+
+/* Estilo mobile*/
+@media (max-width: 767px) {
+    .container_tarjetas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .w-correccionMegustas {
+        width: 95%;
+    }
+}
+
+@media (min-width: 999px) {
+    .w-correccionMegustas {
+        width: 90%;
+    }
+}
+
+@media (max-width: 620px) {
+    #listaMeGustas {
+        display: none !important;
+    }
+}
+
+@media (min-width: 621px) {
+    #tarjetasMeGustas {
+        display: none !important;
+    }
+}

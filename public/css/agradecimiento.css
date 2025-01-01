@@ -1,0 +1,62 @@
+
+
+.container-gral-resumen-compra{
+    padding-bottom: 60px;
+}
+.container-gral-resumen-compra h1{
+    text-align: center;
+    font-weight: 700;
+    color:#A6C4F7 ;
+    
+    padding-bottom: 40px;
+}
+
+
+.container-datos-factura{
+    height: 300px;
+    padding-bottom: 10px;
+}
+
+.container-datos-factura h3{
+    font-weight: 700;
+}
+
+.datos-carrito-factura{
+    
+    border-bottom: #A6C4F7 solid 1px;
+    
+
+}
+
+@media (min-width: 1025px){
+    .container-datos-gral{
+        display: flex;
+        padding-bottom: 40px;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .container-datos-gral{
+        display: flex;
+        padding-bottom: 60px;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+}
+
+
+@media (max-width: 767px){
+    .container-datos-gral{
+        display: flex;
+       
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 60px;
+    }
+}
