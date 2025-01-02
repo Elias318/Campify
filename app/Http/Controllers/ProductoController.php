@@ -61,9 +61,13 @@ class ProductoController extends Controller
             "imagen_producto.max" => "La imagen no puede superar los 2 MB!",
         ]);
         
-        // Establecemos donde va a estar la direccion de la foto
-        $rutaImagen = $request->file('imagen_producto')->store('imagenes.Productos', 'public'); // Almacena en storage/app/public/images/Productos
-        $data['imagen_producto'] = $rutaImagen;
+        $imagen = $request->file('imagen_producto');
+        $imagenBase64 = base64_encode(file_get_contents($imagen));
+
+        // Guardar la imagen en Base64 en la base de datos
+        $data['imagen_producto'] = $imagenBase64;
+        
+        
 
         ProductoModel::create($data);
 
@@ -122,9 +126,15 @@ class ProductoController extends Controller
             "imagen_producto.max" => "La imagen no puede superar los 2 MB!",
         ]);
         
-        // Establecemos donde va a estar la direccion de la foto
-        $rutaImagen = $request->file('imagen_producto')->store('imagenes.Productos', 'public'); // Almacena en storage/app/public/images/Productos
-        $data['imagen_producto'] = $rutaImagen;
+        // Si se carga una nueva imagen, convertirla a Base64
+        if ($request->hasFile('imagen_producto')) {
+            $imagen = $request->file('imagen_producto');
+            $imagenBase64 = base64_encode(file_get_contents($imagen));
+            $data['imagen_producto'] = $imagenBase64;
+        } else {
+            // Si no se sube una nueva imagen, mantener la existente
+            $data['imagen_producto'] = $producto->imagen_producto;
+        }
 
         $producto->nombre_producto = $data["nombre_producto"];
         $producto->precio_producto = $data["precio_producto"];

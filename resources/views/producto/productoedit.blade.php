@@ -42,7 +42,7 @@
                 <div class="mb-3">
     
                     <label for="descripcion_producto" class="form-label">Descripcion</label>
-                    <textarea name="descripcion_producto" id="descripcion_producto" cols="30" rows="10" class="form-control" value="{{old('descripcion_producto',$producto->descripcion_producto)}}"></textarea>
+                    <textarea name="descripcion_producto" id="descripcion_producto" cols="30" rows="10" class="form-control" >{{ old('descripcion_producto', $producto->descripcion_producto) }}</textarea>
 
                     @error('descripcion_producto')
                     <div class="error_form">{{$message}}</div>
