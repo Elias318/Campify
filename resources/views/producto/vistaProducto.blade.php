@@ -77,7 +77,7 @@
         <h1>Comentarios:</h1>
         <div class="contenedor-mensajes">
             
-            @forelse($producto->comentarios as $comentario)
+            @forelse($producto->comentarios->where('id_padre', null) as $comentario)
 
                 <div class="container-comentarios-gral">
                     <div class="comentario burbuja">
@@ -103,7 +103,7 @@
                 
                     <div class="contenedor-agregar-comentario">
 
-                        @if(!$ya_respondio)
+                        @if(!$ya_respondio && $comentario->usuario_id != Auth::id())
                         <form action="{{ url('/producto/' . $comentario->producto_id . '/respuesta') }}" method="post">
                             @csrf
                             <textarea name="respuesta_comentario" id="respuesta_comentario"  placeholder="Escriba una respuesta..."></textarea>
@@ -117,7 +117,7 @@
                         </form>
                     
                         @else
-                            <p>Ya has respondido este comentario</p>
+                           
 
                         @endif
 
