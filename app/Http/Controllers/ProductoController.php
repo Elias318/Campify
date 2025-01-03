@@ -85,8 +85,10 @@ class ProductoController extends Controller
 
     public function show(string $id)
     {
-        $producto = ProductoModel::with('comentarios.usuario')->findOrFail($id); // Carga también los usuarios de cada comentario
-
+        $producto = ProductoModel::with([
+            'comentarios.usuario', // Carga los comentarios y el usuario que hizo cada comentario
+            'comentarios.respuestas.usuario' // Carga las respuestas de cada comentario junto con el usuario
+        ])->findOrFail($id);
         return view('producto.vistaProducto', compact('producto'));
     }
 

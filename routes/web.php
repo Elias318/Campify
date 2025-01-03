@@ -46,7 +46,12 @@ Route::get('/meGustas', [MeGustasController::class, 'index'])->name('meGustas');
 Route::delete('/me-gusta/destroy', [MeGustasController::class, 'destroy'])->name('me-gusta.destroy');
 Route::post('/me-gusta/toggle', [MeGustasController::class, 'toggle'])->name('me-gusta.toggle');
 
-Route::post('/producto/{producto_id}', [ComentarioController::class,'store']);
+
+/*COMENTARIOS*/
+Route::post('/producto/{producto_id}/comentario', [ComentarioController::class,'storeComentario']);
+Route::post('/producto/{producto_id}/respuesta', [ComentarioController::class, 'storeRespuesta']);
+// Route::post('/comentarios', [ComentarioController::class, 'store'])->name('comentarios.store');
+
 
 Route::post('/enviar-formulario', [FormularioController::class, 'enviarFormulario'])->name('enviar.formulario');
 
@@ -59,10 +64,10 @@ Route::patch('/carrito/disminuir', [CarritoController::class, 'disminuir'])->nam
 Route::get('/finalizarcompra', [FinalizarCompraController::class, 'finalizarCompra'])->name('finalizarcompra');
 Route::post('/finalizarcompra/agradecimiento', [FinalizarCompraController::class, 'compraFinalizada'])->name('finalizarcompra.agradecimiento');
 
+
+
+
 Route::get('/panelproductos', [AdminController::class, 'mostrarPanel'])->name('panelproductos');
-
-
-
 Route::get('/producto/{producto}/edit', [ProductoController::class, 'edit'])->name('producto.edit');
 Route::put('/producto/{producto}', [ProductoController::class, 'update'])->name('producto.update');
 Route::delete('/producto/{producto}', [ProductoController::class, 'destroy'])->name('producto.destroy');

@@ -6,7 +6,8 @@
         <div class="contenedor-imagenes">
             <!-- Imagen -->
             <div class="contenedor-imagen-principal">
-                <img src={{ asset('storage/' . $producto->imagen_producto) }} alt="" class="img-fluid">
+                <img src="data:image/jpeg;base64,{{ $producto->imagen_producto }}" alt="Imagen del producto">
+               
             </div> 
             <!-- Sub imágenes -->
             <div class="">
@@ -75,21 +76,63 @@
     <div class="contenedor-comentarios">
         <h1>Comentarios:</h1>
         <div class="contenedor-mensajes">
-            {{-- ACA VA FOR EACH  --}}
+            
             @forelse($producto->comentarios as $comentario)
-                <div class="comentario burbuja">
-                    <h3 class="header-comentario">{{$comentario->usuario->username}}</h3>
-                    <p class="cuerpo-comentario">
-                        {{$comentario->descripcion_comentario}}
-                    </p>
+
+                <div class="container-comentarios-gral">
+                    <div class="comentario burbuja">
+                        <h3 class="header-comentario">{{$comentario->usuario->username}}</h3>
+                        <p class="cuerpo-comentario">
+                            {{$comentario->descripcion_comentario}}
+                        </p>
+                    </div>
+                    @foreach($comentario->respuestas as $respuesta)
+                        <div class="container-rta">
+                            <h3 class="header-comentario">{{$respuesta->usuario->username}}</h3>
+                            <p class="cuerpo-comentario">
+                                {{$respuesta->descripcion_comentario}}
+                            </p>
+                        </div>
+
+                    @endforeach
+                    @php
+                        $ya_respondio = $comentario->respuestas->where('usuario_id', Auth::id())->isNotEmpty();
+
+                    @endphp
+
+                
+                    <div class="contenedor-agregar-comentario">
+
+                        @if(!$ya_respondio)
+                        <form action="{{ url('/producto/' . $comentario->producto_id . '/respuesta') }}" method="post">
+                            @csrf
+                            <textarea name="respuesta_comentario" id="respuesta_comentario"  placeholder="Escriba una respuesta..."></textarea>
+                            @error('respuesta_comentario')
+                            <div class="error_form">{{$message}}</div>
+                            @enderror
+                            <input type="text" style="display: none" value="{{$comentario->id_comentario}}" name="id_padre">
+                            <input type="text" style="display: none" value="{{$comentario->producto_id}}" name="id_producto">
+
+                            <button type="submit">Responder</button>
+                        </form>
+                    
+                        @else
+                            <p>Ya has respondido este comentario</p>
+
+                        @endif
+
+                    
+                    </div>
                 </div>
-                @empty
-                <p class="aviso-sin-comentario">No hay comentarios aún. ¡Sé el primero en comentar!</p>
+                
+                    
+                    @empty
+                    <p class="aviso-sin-comentario">No hay comentarios aún. ¡Sé el primero en comentar!</p>
             @endforelse
 
             @auth
                 <div class="contenedor-agregar-comentario">
-                    <form action="" method="post">
+                    <form action="{{ url('/producto/' . $producto->id_producto . '/comentario') }}" method="post">
                         @csrf
                         <textarea name="descripcion_comentario" id="descripcion_comentario"  placeholder="Escriba un comentario..."></textarea>
                         @error('descripcion_comentario')

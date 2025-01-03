@@ -29,25 +29,66 @@ class ComentarioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function storeComentario(Request $request)
     {
-        $request-> validate([
-            "descripcion_comentario"=>['required']
-        ],[
-            "descripcion_comentario.required"=>"Ingresar Comentario"
-        ]);
-
+      
+        $user_id = Auth::id(); //Esto es para obtener el ID del usuario autenticado
         
-        $user_id = Auth::id(); 
 
-        ComentarioModel::create([
-            'usuario_id' => $user_id,
-            'producto_id' => $request['id_producto'],
-            'descripcion_comentario' => $request['descripcion_comentario']
-        ]);
+            $request-> validate([
+                "descripcion_comentario"=>['required']
+                
+            ],[
+                "descripcion_comentario.required"=>"Ingresar Comentario!"
+                
+    
+            ]);
+            ComentarioModel::create([
+                'usuario_id' => $user_id,
+                'producto_id' => $request['id_producto'],
+                'descripcion_comentario' => $request['descripcion_comentario']
+            ]);
+        
 
-        return back();
+    
+        
+
+        return back()->with('success', 'comentario enviado correctamente');
     }
+
+    public function storerespuesta(Request $request)
+    {   
+        // dd($request->all()); //PARA SABER QUE LLEGA 
+      
+        $user_id = Auth::id(); //Esto es para obtener el ID del usuario autenticado
+
+       
+
+      
+
+            $request-> validate([
+                "respuesta_comentario" => ['required']
+            ],[
+                "respuesta_comentario.required"=>"Ingresar respuesta"
+    
+            ]);
+
+            ComentarioModel::create([
+                'usuario_id'=>$user_id,
+                'producto_id'=>$request['id_producto'],
+                'descripcion_comentario'=>$request-> input('respuesta_comentario'),
+                'id_padre' => $request['id_padre']
+
+            ]);
+        
+
+    
+        
+
+        return back()->with('success', 'comentario enviado correctamente');
+    }
+
+
 
     /**
      * Display the specified resource.
@@ -68,9 +109,19 @@ class ComentarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $comentario = ComentarioModel::find($id);
+
+        if($request->estado){
+            $comentario->estado = 1 ;
+        }else{
+            $comentario->estado = 0 ;
+        }
+
+        $comentario->save();
+
+        return back();
     }
 
     /**
