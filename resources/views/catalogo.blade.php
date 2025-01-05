@@ -57,7 +57,7 @@
                             <div class="container_datos_tarjeta">
                                 <h3>{{$producto->nombre_producto}}</h3>
                                 <p>{{$producto->categoria->nombre_categoria}}</p>
-                                <p>{{$producto->descripcion_producto}}</p>
+                               <p>{{ \Illuminate\Support\Str::words($producto->descripcion_producto, 20, '...') }}</p> 
                                 <p>
                                     ${{$producto->precio_producto}}
                                 </p>
@@ -89,6 +89,9 @@
                         
                 
                 @endforeach
+            </div>
+            <div class="d-flex justify-content-center mt-4">
+                {{ $productos->links() }}
             </div>
         </div>
     </div>

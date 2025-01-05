@@ -102,7 +102,7 @@
 
                 
                     <div class="contenedor-agregar-comentario">
-
+                        @auth
                         @if(!$ya_respondio && $comentario->usuario_id != Auth::id())
                         <form action="{{ url('/producto/' . $comentario->producto_id . '/respuesta') }}" method="post">
                             @csrf
@@ -120,7 +120,7 @@
                            
 
                         @endif
-
+                        @endauth
                     
                     </div>
                 </div>

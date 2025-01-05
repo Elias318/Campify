@@ -62,10 +62,6 @@ class ComentarioController extends Controller
       
         $user_id = Auth::id(); //Esto es para obtener el ID del usuario autenticado
 
-       
-
-      
-
             $request-> validate([
                 "respuesta_comentario" => ['required']
             ],[

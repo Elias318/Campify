@@ -18,10 +18,10 @@ class ProductoController extends Controller
             // Filtra los productos por las categorías seleccionadas
             $productos = ProductoModel::whereHas('categoria', function ($query) use ($categorias) {
                 $query->whereIn('nombre_categoria', $categorias);
-            })->get();
+            })->paginate(3);
         } else {
             // Si no hay filtros, devuelve todos los productos
-            $productos = ProductoModel::all();
+            $productos = ProductoModel::paginate(3);
         }
 
         return view('catalogo', compact('productos'));  // ["productos"=>$productros] es lo mismo
