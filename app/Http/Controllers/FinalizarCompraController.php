@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class FinalizarCompraController extends Controller
 {
-   public function finalizarCompra(){
+   
+    public function finalizarCompraDeCarrito(){
 
         $carrito = session()->get('carrito', []);
         
@@ -22,6 +23,38 @@ class FinalizarCompraController extends Controller
             ];
         });
 
+
+        
+        
+
+        $usuario = Auth::user();
+
+        return view('producto.finalizacioncompra', compact('productosEnCarrito', 'usuario'));
+    }
+
+    public function finalizarCompraIndividual(Request $request){
+        
+       $nombreProducto = $request->input('nombre_producto');
+       $precioProducto = $request->input('precio_producto');
+       $cantidadProducto = $request->input('cantidad_producto');
+
+        
+       $producto =ProductoModel::where('nombre_producto', $nombreProducto)->first();
+
+
+       if(!$producto){
+            return redirect()->back()->with('error', 'Producto no encontrado');
+       }
+
+       $productosEnCarrito = [
+            [
+                'producto' => $producto,
+                'precio' => $precioProducto,
+                'cantidad' => $cantidadProducto
+                
+            ]
+        ];
+        
         
 
         $usuario = Auth::user();

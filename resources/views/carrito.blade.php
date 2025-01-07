@@ -38,7 +38,7 @@
     @endforeach
 
     <div class="container-btn-finalizar-compra">
-        <a href="{{route ('finalizarcompra')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
+        <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
 
     </div>
 </div>
