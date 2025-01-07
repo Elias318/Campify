@@ -62,18 +62,28 @@
             </div>
 
             @auth
-            <div class="contenedor-btn-comprar">
-                <a href="{{route('finalizarcompra')}}">
+            {{-- <div class="contenedor-btn-comprar">
+                <a href="{{route('finalizarCompraDeCarrito')}}">
                     <button class="btn-comprar btn w-100">Comprar</button>
                 </a>
-            </div>
+            </div> --}}
 
             <div class="contenedor-btn-comprar">
-                <form action="{{route('finalizarcompra')}}" method="post">
-                    <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{$producto->nombre_producto}}">
-                    
+                
 
-                    <button class="btn-comprar btn w-100">Comprar</button>
+                
+                <form class="d-flex gap-4 align-items-end" action="{{route('finalizarCompraIndividual')}}" method="post">
+                    @csrf
+                    
+                    <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{$producto->nombre_producto}}">
+                    <input type="hidden" name="precio_producto" id="precio_producto" value="{{$producto->precio_producto}}">
+                    <div>
+                        <label class="pb-2" for="cantidad_producto">Cantidad:</label>
+                        <input type="number" min="1" value="1" style="width: 40px;" name="cantidad_producto" id="cantidad_producto">
+                    </div>
+                    
+                    
+                    <button class="btn-comprar btn w-100 h-50 ">Comprar</button>
                 </form>
             </div>
 
