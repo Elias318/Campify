@@ -19,6 +19,10 @@ class ProductoController extends Controller
             $productos = ProductoModel::whereHas('categoria', function ($query) use ($categorias) {
                 $query->whereIn('nombre_categoria', $categorias);
             })->paginate(3);
+
+            // Incluye los filtros en los enlaces de paginación
+            $productos->appends(['categorias' => $categorias]);
+
         } else {
             // Si no hay filtros, devuelve todos los productos
             $productos = ProductoModel::paginate(3);
@@ -114,7 +118,7 @@ class ProductoController extends Controller
             "stock_producto" => ['required'],
             "descripcion_producto" => ['required'],
             'categoria_id' => ['required', 'integer', 'not_in:""'],
-            "imagen_producto" => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'], // Validación para la imagen
+            "imagen_producto" => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'], // Validación para la imagen
         ], [
             "nombre_producto.required" => "Falta completar este campo!",
             "precio_producto.required" => "Falta completar este campo!",
@@ -130,15 +134,22 @@ class ProductoController extends Controller
         
         // Si se carga una nueva imagen, convertirla a Base64
         if ($request->hasFile('imagen_producto')) {
+            // Si el usuario sube una nueva imagen
             $imagen = $request->file('imagen_producto');
+            
+            // Convertimos la imagen a base64
             $imagenBase64 = base64_encode(file_get_contents($imagen));
+            
+            // Asignamos la nueva imagen
             $data['imagen_producto'] = $imagenBase64;
         } else {
-            // Si no se sube una nueva imagen, mantener la existente
+            // Si no se sube ninguna imagen, conservamos la actual
             $data['imagen_producto'] = $producto->imagen_producto;
         }
+        
 
         $producto->nombre_producto = $data["nombre_producto"];
+        $producto->categoria_id = $data["categoria_id"];
         $producto->precio_producto = $data["precio_producto"];
         $producto->stock_producto = $data["stock_producto"];
         $producto->descripcion_producto = $data["descripcion_producto"];

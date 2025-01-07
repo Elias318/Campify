@@ -1,4 +1,26 @@
+.contenedor-comprar{
+    padding:20px 10px  ;
+    background-color: #A7C5F8;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.contenedor-comprar h4{
+    font-weight: 700;
+}
 
+.contenedor-comprar a{
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: white;
+    font-weight: 600;
+}
+
+.contenedor-inicia-sesion a:hover{
+    transform: scale(1.1); 
+    color: white;
+}
 .contenedor-contenedor-gral{
     padding: 20px;
 }

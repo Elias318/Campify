@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProductoModel;
+use Illuminate\Support\Facades\Auth;
+
 
 class FinalizarCompraController extends Controller
 {
@@ -20,7 +22,11 @@ class FinalizarCompraController extends Controller
             ];
         });
 
-        return view('producto.finalizacioncompra', compact('productosEnCarrito'));
+        
+
+        $usuario = Auth::user();
+
+        return view('producto.finalizacioncompra', compact('productosEnCarrito', 'usuario'));
     }
 
 

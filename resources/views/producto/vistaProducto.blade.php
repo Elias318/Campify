@@ -60,11 +60,37 @@
                     </div>
                 </div>
             </div>
+
+            @auth
             <div class="contenedor-btn-comprar">
                 <a href="{{route('finalizarcompra')}}">
                     <button class="btn-comprar btn w-100">Comprar</button>
                 </a>
             </div>
+
+            <div class="contenedor-btn-comprar">
+                <form action="{{route('finalizarcompra')}}" method="post">
+                    <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{$producto->nombre_producto}}">
+                    
+
+                    <button class="btn-comprar btn w-100">Comprar</button>
+                </form>
+            </div>
+
+            @else
+                <div class="contenedor-comprar">
+                    <div class="titulo-subtitulo">
+                        <h4>¿Queres comprar?</h4>
+                        <a href="http://localhost:8000/inicioSesion"><p>Inicia sesión</p></a>
+                    </div>
+
+                    <div class="titulo-subtitulo">
+                        <p>¿No tenes cuenta? <a href="http://localhost:8000/crearCuenta">¡Registrate!</a></p>
+                    </div>
+                    
+                </div>
+            @endauth
+          
             
         </div>
     </div>

@@ -10,7 +10,7 @@
         <div class="row border bg-light pt-2 pb-2 header-tabla">
             <div class="col-2 px-2 text-center">Producto</div>
             <div class="col-2 px-2 text-center">Titulo</div>
-
+            <div class="col-2 px-2 text-center">Categoria</div>
             <div class="col-2 px-2 text-center">Cantidad</div>
             <div class="col-2 px-2 text-center">Precio</div>
            
@@ -23,6 +23,8 @@
                 </div>
                 
                 <div class="col-2 text-center">{{ $producto->nombre_producto }}</div>
+                <div class="col-2 text-center">{{ $producto->categoria->nombre_categoria }}</div>
+
                 <div class="col-2 text-center d-flex justify-content-center align-items-center gap-2">{{ $producto->stock_producto }}</div>
                 <div class="col-2 text-center precio-producto">${{ $producto->precio_producto }}</div>
                

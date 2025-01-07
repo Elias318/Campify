@@ -10,7 +10,7 @@
                     <div class="mb-3">
                         
                       <label for="nombre_factura" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="nombre_factura" name="nombre_factura" value="{{old('nombre_factura')}}">
+                      <input type="text" class="form-control" id="nombre_factura" name="nombre_factura" value="{{old('nombre_factura',$usuario->username)}}">
                         @error('nombre_factura')
                         <div class="error_form">{{$message}}</div>
                         @enderror

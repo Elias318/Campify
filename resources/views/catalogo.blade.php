@@ -8,9 +8,9 @@
             <form action="{{ route('catalogo') }}" method="GET"">
                 @csrf
                 <label class="form-check">
-                    <input class="form-check-input" type="checkbox" name="categorias[]" value="Campamentos"
-                           {{ in_array('Campamento', request()->input('categorias', [])) ? 'checked' : '' }}>
-                    <span class="form-check-label">CAMPAMENTOS</span>
+                    <input class="form-check-input" type="checkbox" name="categorias[]" value="Camping"
+                           {{ in_array('Camping', request()->input('categorias', [])) ? 'checked' : '' }}>
+                    <span class="form-check-label">CAMPING</span>
                 </label>
                 <label class="form-check">
                     <input class="form-check-input" type="checkbox" name="categorias[]" value="Accesorios para bicicletas"
