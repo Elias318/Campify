@@ -54,6 +54,15 @@
                         @enderror
                         
                     </div>
+
+                    <!-- Campos ocultos para los productos -->
+                @foreach($productosEnCarrito as $item)
+                    <input type="hidden" name="productos[{{ $loop->index }}][id]" value="{{ $item['producto']->id_producto }}">
+                    <input type="hidden" name="productos[{{ $loop->index }}][nombre]" value="{{ $item['producto']->nombre_producto }}">
+                    <input type="hidden" name="productos[{{ $loop->index }}][precio]" value="{{ $item['producto']->precio_producto }}">
+                    <input type="hidden" name="productos[{{ $loop->index }}][cantidad]" value="{{ $item['cantidad'] }}">
+                    <input type="hidden" name="productos[{{ $loop->index }}][total]" value="{{ $item['producto']->precio_producto * $item['cantidad'] }}">
+                @endforeach
               
                     
                   </form>

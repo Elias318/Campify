@@ -12,7 +12,7 @@ use App\Http\Controllers\FormularioController;
 
 Route::get('/', function () {
     return view('index');
-})->name('/');
+})->middleware('auth')->name('/');
 
 Route::get('/sobreNosotros', function() {
     return view('sobreNosotros');

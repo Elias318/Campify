@@ -29,6 +29,8 @@
     <link rel="stylesheet" href={{ asset('css/finalizarCompra.css') }}>
     <link rel="stylesheet" href={{ asset('css/agradecimiento.css') }}>
     <link rel="stylesheet" href={{ asset('css/panelproductos.css') }}>
+   
+
 
 
 

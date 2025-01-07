@@ -18,14 +18,14 @@
                 @php
                     $totalPrecio = 0;
                 @endphp
-                @foreach($productosEnCarrito as $item)
+                @foreach($productos as $item)
                     <div class="datos-carrito-factura">
-                        <p><strong>Producto:</strong> {{ $item['producto']->nombre_producto }}</p>
+                        <p><strong>Producto:</strong> {{ $item['nombre'] }}</p>
                         <p><strong>Cantidad:</strong> {{ $item['cantidad'] }}</p>
-                        <p><strong>Precio:</strong> ${{ $item['producto']->precio_producto }}</p>
+                        <p><strong>Precio:</strong> ${{ $item['precio'] }}</p>
                     </div>
                     @php
-                        $totalPrecio += $item['producto']->precio_producto * $item['cantidad'];
+                        $totalPrecio += $item['precio'] * $item['cantidad'];
                     @endphp
                 @endforeach
                 <div>
