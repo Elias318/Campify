@@ -62,13 +62,13 @@
                     <div class="error_form">{{$message}}</div>
                     @enderror
                 </div>
-                
+              
 
                 <div class="mb-3">
     
-                    <label for="imagen_producto" class="form-label">Imagen Principal</label>
-                    <input type="file" class="form-control" id="imagen_producto" name="imagen_producto">
-                    @error('imagen_producto')
+                    <label for="galeria_imagenes" class="form-label">Galeria de imagenes</label>
+                    <input type="file" class="form-control" id="galeria_imagenes" name="galeria_imagenes[]" multiple>
+                    @error('galeria_imagenes')
                     <div class="error_form">{{$message}}</div>
                     @enderror
                     

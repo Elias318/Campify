@@ -1,3 +1,55 @@
+.contenedor-imagen-principal img {
+    
+    max-width: 500px; /* Ancho máximo */
+    height: auto;
+   
+}
+
+.galeria-imagenes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.galeria-imagenes img {
+    width: 80px; /* Tamaño de las imágenes pequeñas */
+    height: 80px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.galeria-imagenes img:hover {
+    border-color: #A7C5F8; /* Color para imagen destacada o hover */
+}
+
+
+.contenedor-galeria {
+
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.imagen-galeria {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.imagen-galeria:hover {
+    transform: scale(1.1);
+}
+
+
 .contenedor-comprar{
     padding:20px 10px  ;
     background-color: #A7C5F8;
@@ -387,6 +439,7 @@
         align-items: center;
     }
     .contenedor-imagenes{
+        padding-bottom: 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
