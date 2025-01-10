@@ -13,7 +13,7 @@ class ProductoModel extends Model
     protected $table= "productos";
     protected $primaryKey = "id_producto";
     public $timestamps = false;
-    protected $fillable = ["nombre_producto","precio_producto", "stock_producto", "imagen_producto", "categoria_id","descripcion_producto"];
+    protected $fillable = ["nombre_producto","precio_producto", "stock_producto", "imagen_producto", "categoria_id","descripcion_producto", "galeria_imagenes"];
 
 
     public function categoria():BelongsTo{
@@ -29,4 +29,9 @@ class ProductoModel extends Model
     public function comentarios():HasMany{
         return $this->hasMany(ComentarioModel::class,'producto_id' );
     }
+
+    public function imagenes(): HasMany{
+    return $this->hasMany(ImagenProductoModel::class, 'producto_id', 'id_producto');
+    }
+
 }

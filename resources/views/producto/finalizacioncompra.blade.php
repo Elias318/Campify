@@ -10,7 +10,7 @@
                     <div class="mb-3">
                         
                       <label for="nombre_factura" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="nombre_factura" name="nombre_factura" value="{{old('nombre_factura',$usuario->username)}}">
+                      <input type="text" class="form-control" id="nombre_factura" name="nombre_factura" value="{{old('nombre_factura',$usuario->nombre)}}">
                         @error('nombre_factura')
                         <div class="error_form">{{$message}}</div>
                         @enderror
@@ -19,7 +19,7 @@
                     <div class="mb-3">
               
                         <label for="apellido_factura" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="apellido_factura" name="apellido_factura" value="{{old('apellido_factura')}}">
+                        <input type="text" class="form-control" id="apellido_factura" name="apellido_factura" value="{{old('apellido_factura', $usuario->apellido)}}">
                        
                         @error('apellido_factura')
                         <div class="error_form">{{$message}}</div>
@@ -29,7 +29,7 @@
                     <div class="mb-3">
               
                         <label for="email_factura" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email_factura" name="email_factura" value="{{old('email_factura')}}">
+                        <input type="email" class="form-control" id="email_factura" name="email_factura" value="{{old('email_factura', $usuario->email)}}">
                         @error('email_factura')
                         <div class="error_form">{{$message}}</div>
                         @enderror

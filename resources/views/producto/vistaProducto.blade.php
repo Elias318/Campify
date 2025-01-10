@@ -1,24 +1,27 @@
 @include('header')
 <!-- Contenedor general -->
 
-    <div class=" contenedor-contenedor-gral  ">
+    <div class="contenedor-contenedor-gral">
         <!-- Contenedor de imágenes ilustrativas -->
         <div class="contenedor-imagenes">
-            <!-- Imagen -->
+            <!-- Imagen Principal -->
             <div class="contenedor-imagen-principal">
-                <img src="data:image/jpeg;base64,{{ $producto->imagen_producto }}" alt="Imagen del producto">
-               
+                <img id="imagen-destacada" 
+                     src="{{ asset($producto->imagenes->firstWhere('es_destacada', true)->ruta_imagen) }}" 
+                     alt="Imagen del producto">
             </div> 
             <!-- Sub imágenes -->
-            <div class="">
-                <img src="images/gtr.JPG" alt="" class="">
-                <img src="images/gtr.JPG" alt="" class="">
-                <img src="images/gtr.JPG" alt="" class="">
-                <img src="images/gtr.JPG" alt="" class="">
-                <img src="images/gtr.JPG" alt="" class="">
-                <img src="images/gtr.JPG" alt="" class="">
+            <div class="galeria-imagenes">
+                @foreach ($producto->imagenes as $imagen)
+                    <img src="{{ asset($imagen->ruta_imagen) }}" 
+                         alt="Imagen del producto" 
+                         class="imagen-galeria {{ $imagen->es_destacada ? 'destacada' : '' }}" 
+                         onclick="cambiarImagen('{{ asset($imagen->ruta_imagen) }}')">
+                @endforeach
             </div>
         </div>
+        
+    
     
         <!-- Contenedor de datos de compra -->
         <div class="contenedor-datos">
@@ -62,11 +65,7 @@
             </div>
 
             @auth
-            {{-- <div class="contenedor-btn-comprar">
-                <a href="{{route('finalizarCompraDeCarrito')}}">
-                    <button class="btn-comprar btn w-100">Comprar</button>
-                </a>
-            </div> --}}
+          
 
             <div class="contenedor-btn-comprar">
                 

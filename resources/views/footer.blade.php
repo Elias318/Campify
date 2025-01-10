@@ -46,6 +46,10 @@
         <!-- Animaciones con JS -->
         <script src="js/animaciones.js"></script>
 
+        <!-- Vista producto JS -->
+        <script src="{{ asset('js/vistaproducto.js') }}"></script>
+
+
     </body>
     
 </html>

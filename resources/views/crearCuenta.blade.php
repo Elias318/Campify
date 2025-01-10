@@ -14,6 +14,20 @@
               <img class="mb-4 w-imagen-inicio" src="images/logosinbg.png">
               <h1 class="h3 mb-3 fw-normal">¡Crea tu cuenta!</h1>
               <div class="form-floating borde-form-sesion">
+                <input name="nombre" type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" value="{{old('nombre')}}">
+                <label for="floatingInput">Nombre</label>
+              </div>
+              @error("nombre")
+                <div class="alert alert-danger"> {{$message}} </div>
+              @enderror
+              <div class="form-floating borde-form-sesion mt-1">
+                <input name="apellido" type="text" class="form-control" id="floatingInput" placeholder="Ingrese su apellido" value="{{old('apellido')}}">
+                <label for="floatingInput">Apellido</label>
+              </div>
+              @error("apellido")
+                <div class="alert alert-danger"> {{$message}} </div>
+              @enderror
+              <div class="form-floating borde-form-sesion mt-1">
                 <input name="username" type="text" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{old('username')}}">
                 <label for="floatingInput">Nombre de usuario</label>
               </div>

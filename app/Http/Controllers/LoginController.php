@@ -11,11 +11,15 @@ class LoginController extends Controller
     public function registro(Request $request)
     {
         $data = $request->validate([
+                "nombre" => ['required'],
+                "apellido" => ['required'],
                 "username" => ['required', 'min:2', 'max:12', 'alpha_dash'],
                 "email" => ["required", "email"],
                 "password" => ['required', 'regex:/^(?=.*[A-Za-z])(?=.*\d).+$/', 'confirmed']
             ],
             [
+                "nombre.required" => "Este campo es obligatorio",
+                "apellido.required" => "Este campo es obligatorio",
                 "username.required" => "Este campo es obligatorio",
                 "username.min" => "Este campo necesita más de 2 caracteres",
                 "username.max" => "Este campo no puede tener màs de 12 caracteres",
