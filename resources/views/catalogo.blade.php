@@ -1,6 +1,12 @@
 @include('header')
 
 <div class="container text-center">
+
+    <div>
+        <div>
+            <h1 class=" fw-bold  pt-4   productos-titulo fs-2"></h1>
+        </div>
+    </div>
     <div class="row">
         <!-- Contenedor de Filtros -->
         <div class="col-12 col-md-2 d-flex flex-column gap-3 filtro">
@@ -45,7 +51,8 @@
 
         <!-- Contenedor de Productos -->
         <div class="col-12 col-md-10 productos-container d-flex flex-column justify-content-center align-items-center gap-10">
-            <h1 class=" fw-bold my-4 border-bottom pb-2 productos-titulo fs-2"></h1>
+          
+            
             <!-- Fila de Tarjetas -->
             <div class="row container_tarjetas pt-4">
                 @foreach ($productos as $producto)
@@ -53,7 +60,9 @@
                     
                 
                         <div class="tarjeta-producto">
-                            <img src="data:image/jpeg;base64,{{ $producto->imagen_producto }}" alt="Imagen del producto">
+                            
+                            <img id="imagen-destacada" src="{{ asset($producto->imagenes->firstWhere('es_destacada', true)->ruta_imagen) }}" alt="Imagen del producto">
+                          
                             <div class="container_datos_tarjeta">
                                 <h3>{{$producto->nombre_producto}}</h3>
                                 <p>{{$producto->categoria->nombre_categoria}}</p>

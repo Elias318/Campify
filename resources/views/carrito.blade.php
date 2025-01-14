@@ -36,11 +36,28 @@
         </div>
         
     @endforeach
-
-    <div class="container-btn-finalizar-compra">
-        <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
-
-    </div>
+        @auth
+            <div class="container-btn-finalizar-compra">
+                <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
+        
+            </div>
+        @else
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="contenedor-comprar w-50 mt-4 ">
+                    <div class="titulo-subtitulo">
+                        <h4>¿Queres comprar?</h4>
+                        <a href="http://localhost:8000/inicioSesion"><p>Inicia sesión</p></a>
+                    </div>
+    
+                    <div class="titulo-subtitulo">
+                        <p>¿No tenes cuenta? <a href="http://localhost:8000/crearCuenta">¡Registrate!</a></p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        @endauth
+    
 </div>
 
 @include('footer')

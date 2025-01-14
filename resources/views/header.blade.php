@@ -107,11 +107,15 @@
                             </li>
                     @else
                         <li class="nav-item ajuste-item-nav-md">
+                            <a class="nav-link active colorLetras" href="{{ route('carrito.index') }}">Carrito</a>
+                        </li>
+                        <li class="nav-item ajuste-item-nav-md">
                             <a class="nav-link active colorLetras" href="{{ route('crearCuenta') }}">Crear Cuenta</a>
                         </li>
                         <li class="nav-item ajuste-item-nav-md">
                             <a class="nav-link active colorLetras" href="{{ route('inicioSesion') }}">Iniciar Sesion</a>
                         </li>
+                      
                     @endauth
                     
                     </ul>
