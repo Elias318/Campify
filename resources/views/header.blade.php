@@ -16,20 +16,20 @@
     <!-- CSS  -->
     <link rel="icon" href={{ asset('images/logosinbg.png') }} type="image/png">
 
-    <link rel="stylesheet" href={{ asset('css/style.css') }}>
-    <link rel="stylesheet" href={{ asset('css/footer-style.css') }}>
-    <link rel="stylesheet" href={{ asset('css/header-style.css') }}>
-    <link rel="stylesheet" href={{ asset('css/sobreNosotros.css') }}>
-    <link rel="stylesheet" href={{ asset('css/trabajaConNosotros.css') }}>
-    <link rel="stylesheet" href={{ asset('css/inicioSesion.css') }}>
-    <link rel="stylesheet" href={{ asset('css/catalogo2.css') }}>
-    <link rel="stylesheet" href={{ asset('css/vistaProducto.css') }}>
-    <link rel="stylesheet" href={{ asset('css/agregarProducto.css') }}>
-    <link rel="stylesheet" href={{ asset('css/carrito.css') }}>
-    <link rel="stylesheet" href={{ asset('css/finalizarCompra.css') }}>
-    <link rel="stylesheet" href={{ asset('css/agradecimiento.css') }}>
-    <link rel="stylesheet" href={{ asset('css/panelproductos.css') }}>
-   
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sobreNosotros.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/trabajaConNosotros.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/inicioSesion.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/catalogo2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vistaProducto.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/agregarProducto.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carrito.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/finalizarCompra.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/agradecimiento.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/panelproductos.css') }}">
+    
 
 
 

@@ -44,7 +44,7 @@
              
                 <li class="custom-carousel-slide">
                     <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Accesorios+para+vehiculos">
-                        <img src="images/stock/autoCategoria.png" alt="Accesorios para vehiculos">
+                        <img src="images/stock/autocategoria.png" alt="Accesorios para vehiculos">
                         <p class="slide-title">Accesorios para vehiculos</p>
                     </a>
                 </li>
