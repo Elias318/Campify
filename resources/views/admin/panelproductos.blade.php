@@ -18,8 +18,9 @@
         </div>
         @foreach($productos as $producto)
             <div class="row border align-items-center pt-2 pb-2" id="{{$producto->id_producto  }}">
-                <div class="col-2 text-center">
-                    <img class=" img-producto-tabla" src="data:image/jpeg;base64,{{ $producto->imagen_producto }}" alt="Imagen del producto">
+                <div class="col-2 text-center imagen-destacada-tabla">
+                    <img id="imagen-destacada"  src="{{ asset($producto->imagenes->firstWhere('es_destacada', true)->ruta_imagen) }}" alt="Imagen del producto">
+
                 </div>
                 
                 <div class="col-2 text-center">{{ $producto->nombre_producto }}</div>
