@@ -7,7 +7,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "heroku/heroku-buildpack-php": "^261.0",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "mailersend/laravel-driver": "^2.7",
