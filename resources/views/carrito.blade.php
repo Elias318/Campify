@@ -40,9 +40,17 @@
 
             @if( $productosEnCarrito->isEmpty())
                 <div class="d-flex justify-content-center align-items-center">
+                    <div class="contenedor-comprar w-50 mt-4 ">
+                        <div class="titulo-subtitulo">
+                            <h4>Debes agregar algun producto al carrito</h4>
+                            
+                        </div>
+        
+                        <div class="titulo-subtitulo">
+                            <p>Ir a <a href="{{ route('catalogo') }}">Catalogo</a></p>
+                        </div>
                         
-                    <p>Debes agregar algun producto en el carrito para poder finalizar la compra </p>    
-                    
+                    </div>
                 </div>
             
             @else
