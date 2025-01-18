@@ -42,12 +42,12 @@
                 <div class="d-flex justify-content-center align-items-center">
                     <div class="contenedor-comprar w-50 mt-4 ">
                         <div class="titulo-subtitulo">
-                            <h4>Debes agregar algun producto al carrito</h4>
+                            <h4>Debes agregar algún producto al carrito</h4>
                             
                         </div>
         
                         <div class="titulo-subtitulo">
-                            <p>Ir a <a href="{{ route('catalogo') }}">Catalogo</a></p>
+                            <p>Revisa nuevamente nuestro <a href="{{ route('catalogo') }}">Catalogo</a></p>
                         </div>
                         
                     </div>

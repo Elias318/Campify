@@ -103,7 +103,10 @@ class ProductoController extends Controller
     {
         $busqueda = $request->input("busqueda");
 
-        $productos = ProductoModel::where('nombre_producto', 'LIKE', '%' . $busqueda . '%')->get();
+        $productos = ProductoModel::where('nombre_producto', 'LIKE', '%' . $busqueda . '%')
+            ->paginate(10)
+            ->appends(['busqueda' => $busqueda]);
+
 
         return view('catalogo', ['productos' => $productos, 'busqueda' => $busqueda]);
     }
