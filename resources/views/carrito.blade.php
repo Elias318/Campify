@@ -39,17 +39,18 @@
         @auth
 
             @if( $productosEnCarrito->isEmpty())
-                <div class="container-btn-finalizar-compra">
-                    <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
-            
+                <div class="d-flex justify-content-center align-items-center">
+                        
+                    <p>Debes agregar algun producto en el carrito para poder finalizar la compra </p>    
+                    
                 </div>
             
             @else
-                <div class="d-flex justify-content-center align-items-center">
-                    
-                    <p>Debes agregar algun producto en el carrito </p>    
-                    
-                </div>
+            <div class="container-btn-finalizar-compra">
+                <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
+        
+            </div>
+                
             @endif
             
         @else
