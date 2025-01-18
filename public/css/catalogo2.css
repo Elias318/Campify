@@ -123,8 +123,9 @@
 
 .tarjeta-producto img {
     width: 60%;
-    height: auto;
-    border-bottom: 2px solid #ddd;
+    height: 40%;
+    object-fit: contain;
+    
 }
 
 .tarjeta-producto h3 {

@@ -61,7 +61,7 @@
                 
                         <div class="tarjeta-producto">
                             
-                            <img id="imagen-destacada" src="{{ asset($producto->imagenes->firstWhere('es_destacada', true)->ruta_imagen) }}" alt="Imagen del producto">
+                            <img id="imagen-destacada" src="{{ secure_asset($producto->imagenes->firstWhere('es_destacada', true)->ruta_imagen) }}" alt="Imagen del producto">
                           
                             <div class="container_datos_tarjeta">
                                 <h3>{{$producto->nombre_producto}}</h3>

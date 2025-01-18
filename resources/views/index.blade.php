@@ -30,40 +30,40 @@
         <div class="custom-carousel-track-container">
             <ul class="custom-carousel-track">
                 <li class="custom-carousel-slide">
-                    <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Campamentos">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Campamentos']) }}">
                         <img src="images/stock/termo.png" alt="Camping">
                         <p class="slide-title">Campamentos</p>
                     </a>
                 </li>
                 <li class="custom-carousel-slide">
-                    <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Accesorios+para+bicicletas">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Accesorios para bicicletas']) }}">
                         <img src="images/stock/cascoBici.png" alt="Accesorios para bicicletas">
                         <p class="slide-title">Accesorios para bicicletas</p>
                     </a>
                 </li>
              
                 <li class="custom-carousel-slide">
-                    <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Accesorios+para+vehiculos">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Accesorios para vehiculos']) }}">
                         <img src="images/stock/autocategoria.png" alt="Accesorios para vehiculos">
                         <p class="slide-title">Accesorios para vehiculos</p>
                     </a>
                 </li>
                 <li class="custom-carousel-slide">
-                    <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Hogar+y+Herramientas">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Herramientas y hogar']) }}">
                         <img src="images/stock/sillaNegra.png" alt="Herramientas y hogar">
                         <p class="slide-title">Hogar y herramientas</p>
                     </a>
                 </li>
               
                 <li class="custom-carousel-slide">
-                    <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Reposeras+y+sombrillas">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Reposeras y sombrillas']) }}">
                         <img src="images/stock/sombrilla1.svg" alt="Reposeras y sombrillas">
                         <p class="slide-title">Reposeras y sombrillas</p>
                     </a>
                 </li>
                 
                 <li class="custom-carousel-slide">
-                    <a href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Travel">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Travel']) }}">
                         <img src="images/stock/mochilaTravel.png" alt="Travel">
                         <p class="slide-title">Travel</p>
                     </a>

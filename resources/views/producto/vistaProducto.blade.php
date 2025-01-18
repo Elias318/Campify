@@ -59,7 +59,7 @@
                     <i class="fa-solid fa-box fa-lg text-secondary"></i>
                     <div class="d-flex flex-column justify-content-center align-items-start m-0">
                         <p class="m-0 p-0">Retiro GRATIS por sucursal</p>
-                        <a href="#">Ver sucursales</a>
+                        
                     </div>
                 </div>
             </div>
@@ -182,11 +182,11 @@
                 <div class="contenedor-inicia-sesion">
                     <div class="titulo-subtitulo">
                         <h4>¿Queres dejar un comentario?</h4>
-                        <a href="http://localhost:8000/inicioSesion"><p>Inicia sesión</p></a>
+                        <a href="{{route('inicioSesion')}}"><p>Inicia sesión</p></a>
                     </div>
 
                     <div class="titulo-subtitulo">
-                        <p>¿No tenes cuenta? <a href="http://localhost:8000/crearCuenta">¡Registrate!</a></p>
+                        <p>¿No tenes cuenta? <a href="{{route('crearCuenta')}}">¡Registrate!</a></p>
                     </div>
                     
                 </div>

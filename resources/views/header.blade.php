@@ -14,9 +14,9 @@
     <!-- Añadir Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- CSS  -->
-    <link rel="icon" href={{ asset('images/logosinbg.png') }} type="image/png">
+    <link rel="icon" href={{ secure_asset('images/logosinbg.png') }} type="image/png">
 
-    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/footer-style.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/header-style.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/sobreNosotros.css') }}">
@@ -28,7 +28,21 @@
     <link rel="stylesheet" href="{{ secure_asset('css/carrito.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/finalizarCompra.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/agradecimiento.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/panelproductos.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/panelproductos.css') }}"> --}}
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sobreNosotros.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/trabajaConNosotros.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/inicioSesion.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/catalogo2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vistaProducto.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/agregarProducto.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carrito.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/finalizarCompra.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/agradecimiento.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/panelproductos.css') }}">
     
 
 
@@ -50,7 +64,7 @@
         <nav class="navbar navbar-expand-md bg-body-tertiary p-ajuste-navbar">
             <div class="container-fluid">
                 <a class="navbar-brand p-ajuste-logo" href="{{route('/')}}">
-                    <img src={{ asset('images/logosinbg.png') }} alt="Logo" class="m-ajuste-logo logo">
+                    <img src={{ secure_asset('images/logosinbg.png') }} alt="Logo" class="m-ajuste-logo logo">
                 </a>
                 <button class="navbar-toggler m-ajuste-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa-solid fa-bars colorhamburger"></i>
@@ -74,7 +88,8 @@
                                 Categorias
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Campamentos">Campamento</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Campamentos">Campamento</a></li>
                                     <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Reposeras+y+sombrillas">Reposeras y sombrillas</a></li>
                                     <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Accesorios+para+bicicletas">Accesorios para bicicletas</a></li>
                                     <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Travel">Travel</a></li>
@@ -150,12 +165,12 @@
                                   Categorias
                                 </a>
                                 <ul class="dropdown-menu bg-nav2">
-                                    <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Campamentos">Campamento</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Reposeras+y+sombrillas">Reposeras y sombrillas</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Accesorios+para+bicicletas">Accesorios para bicicletas</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Travel">Travel</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Travel">Accesorios para vehiculos</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost:8000/catalogo?_token=fRCoCOHqUa8f7cgufzFWgzUg6sjFfijr9UqM27zm&categorias%5B%5D=Hogar+y+Herramientas">Hogar y herramientas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Campamentos']) }}">Campamento</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Reposeras y sombrillas']) }}">Reposeras y sombrillas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Accesorios para bicicletas']) }}">Accesorios para bicicletas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Travel']) }}">Travel</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Accesorios para vehiculos']) }}">Accesorios para vehiculos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Herramientas y hogar']) }}">Hogar y herramientas</a></li>
                                 </ul>
                               </li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('sobreNosotros') }}">Sobre nosotros</a></li>
