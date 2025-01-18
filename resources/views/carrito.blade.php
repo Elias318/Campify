@@ -37,10 +37,21 @@
         
     @endforeach
         @auth
-            <div class="container-btn-finalizar-compra">
-                <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
-        
-            </div>
+
+            @if( $productosEnCarrito->isEmpty())
+                <div class="container-btn-finalizar-compra">
+                    <a href="{{route ('finalizarCompraDeCarrito')}}" class="btn btn-primary btn_form boton-enviar">Finalizar compra</a>
+            
+                </div>
+            
+            @else
+                <div class="d-flex justify-content-center align-items-center">
+                    
+                    <p>Debes agregar algun producto en el carrito </p>    
+                    
+                </div>
+            @endif
+            
         @else
             <div class="d-flex justify-content-center align-items-center">
                 <div class="contenedor-comprar w-50 mt-4 ">

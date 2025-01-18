@@ -17,7 +17,7 @@
         @foreach ($productos as $meGusta)
             <div class="row border align-items-center productoMegustas-{{$meGusta->producto_id}}">
                 <div class="col-2 text-center">
-                    <img src="{{ asset('storage/' . $meGusta->producto->imagen_producto) }}" alt="Imagen del producto" style="width: 80px; height: 80px;">
+                    <img src="{{ secure_asset('storage/' . $meGusta->producto->imagen_producto) }}" alt="Imagen del producto" style="width: 80px; height: 80px;">
                 </div>
                 <div class="col-3 text-center">{{ $meGusta->producto->nombre_producto }}</div>
                 <div class="col-3 text-center">{{ $meGusta->producto->categoria->nombre_categoria }}</div>
