@@ -9,19 +9,16 @@
     <!-- Vista de la tabla -->
     <div id="listaMeGustas" class="container-fluid w-correccionMegustas my-5">
         <div class="row border bg-light">
-            <div class="col-2 px-2 text-center">Imagen</div>
+            {{-- <div class="col-2 px-2 text-center">Imagen</div> --}}
             <div class="col-3 px-2 text-center">Nombre</div>
             <div class="col-3 px-2 text-center">Categoría</div>
             <div class="col-4 px-2 text-center">Acciones</div>
         </div>
         @foreach ($productos as $meGusta)
             <div class="row border align-items-center productoMegustas-{{$meGusta->producto_id}}">
-                <div class="col-2 text-center">
-                    {{-- <img src="{{ secure_asset('storage/' . $meGusta->producto->imagen_producto) }}" alt="Imagen del producto" style="width: 80px; height: 80px;"> --}}
-                    <img id="imagen-destacada" 
-                    src="{{ asset($producto->imagenes->firstWhere('es_destacada', true)->ruta_imagen) }}" 
-                    alt="Imagen del producto">
-                </div>
+                {{-- <div class="col-2 text-center">
+                    <img src="{{ secure_asset('storage/' . $meGusta->producto->imagen_producto) }}" alt="Imagen del producto" style="width: 80px; height: 80px;">
+                </div> --}}
                 <div class="col-3 text-center">{{ $meGusta->producto->nombre_producto }}</div>
                 <div class="col-3 text-center">{{ $meGusta->producto->categoria->nombre_categoria }}</div>
                 <div class="botonMeGusta col-4 text-center justify-content-center d-flex">
