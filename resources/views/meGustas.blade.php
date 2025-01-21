@@ -12,7 +12,7 @@
             {{-- <div class="col-2 px-2 text-center">Imagen</div> --}}
             <div class="col-3 px-2 text-center">Nombre</div>
             <div class="col-3 px-2 text-center">Categoría</div>
-            <div class="col-4 px-2 text-center">Acciones</div>
+            <div class="col-3 px-2 text-center">Acciones</div>
         </div>
         @foreach ($productos as $meGusta)
             <div class="row border align-items-center productoMegustas-{{$meGusta->producto_id}}">
@@ -21,7 +21,7 @@
                 </div> --}}
                 <div class="col-3 text-center">{{ $meGusta->producto->nombre_producto }}</div>
                 <div class="col-3 text-center">{{ $meGusta->producto->categoria->nombre_categoria }}</div>
-                <div class="botonMeGusta col-4 text-center justify-content-center d-flex">
+                <div class="botonMeGusta col-3 text-center justify-content-center d-flex">
                     <form method="post" action="{{ route('me-gusta.destroy') }}">
                         @csrf
                         @method("DELETE")
