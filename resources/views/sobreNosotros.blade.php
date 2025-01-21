@@ -19,20 +19,6 @@
             <h2 class="fs-5 pt-3">Este proyecto es el resultado del aprendizaje, esfuerzo y trabajo en equipo de estudiantes del curso Full Stack. ¡Conoce a quienes lo hicieron posible!</h2>
         </div>
         <div class="row w-75 mx-auto perfil">
-            <div class="col-sm-12 col-md-12 col-lg-6 pt-3 pb-1 mb-2 d-flex flex-column  justify-content-center align-items-center fade-in">
-                <img class="fotoParticipante" src="images/perfilsebastian.jpeg" alt="fotoparticipante">
-                <div class="info-itegragnte">
-                    <h3 class="fs-5 mt-2 px-4">Sebastian Romero</h3>
-                    <a href="https://www.linkedin.com/in/sebastian-romero1/">Linkedin</a>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 pt-3 pb-1 mb-2 d-flex flex-column  justify-content-center align-items-center fade-in">
-                <img class="fotoParticipante" src="images/perfiljuan.jpeg" alt="fotoparticipante">
-                <div class="info-itegragnte">
-                    <h3 class="fs-5 mt-2 px-4">Juan Pablo Britos</h3>
-                    <a href="https://www.linkedin.com/in/juan-pablo-britos/">Linkedin</a>
-                </div>
-            </div>
             <div class="col-sm-12 col-md-12 col-lg-12 pt-3 pb-1 mb-2 d-flex flex-column  justify-content-center align-items-center fade-in">
                 <img class="fotoParticipante" src="images/1eli.2.png" alt="fotoparticipante">
                 <div class="info-itegragnte">
