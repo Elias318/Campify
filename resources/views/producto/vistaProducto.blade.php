@@ -90,11 +90,11 @@
                 <div class="contenedor-comprar">
                     <div class="titulo-subtitulo">
                         <h4>¿Queres comprar?</h4>
-                        <a href="http://localhost:8000/inicioSesion"><p>Inicia sesión</p></a>
+                        <a href="{{route('inicioSesion')}}"><p>Inicia sesión</p></a>
                     </div>
 
                     <div class="titulo-subtitulo">
-                        <p>¿No tenes cuenta? <a href="http://localhost:8000/crearCuenta">¡Registrate!</a></p>
+                        <p>¿No tenes cuenta? <a href="{{route('crearCuenta')}}">¡Registrate!</a></p>
                     </div>
                     
                 </div>
