@@ -54,7 +54,7 @@ class LoginController extends Controller
         if(Auth::attempt(["email" => $data["loginUsername"], "password" => $data["loginPassword"]]) || Auth::attempt(["username" => $data["loginUsername"], "password" => $data["loginPassword"]]))
         {
             $request->session()->regenerate();
-            return response()->redirectTo("index");
+            return response()->redirectTo("/");
         }
         else{
             //fallo!
