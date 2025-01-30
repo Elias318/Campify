@@ -30,7 +30,7 @@
         <div class="custom-carousel-track-container">
             <ul class="custom-carousel-track">
                 <li class="custom-carousel-slide">
-                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Campamentos']) }}">
+                    <a href="{{ route('catalogo', ['_token' => csrf_token(), 'categorias[]' => 'Camping']) }}">
                         <img src="images/stock/termo.png" alt="Camping">
                         <p class="slide-title">Campamentos</p>
                     </a>
