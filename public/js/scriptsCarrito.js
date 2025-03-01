@@ -17,10 +17,22 @@ $(".formAgregarProducto").submit(function (event) {
         method: "POST",
         data: JSON.stringify({ producto_id: productoId }),
         success: function () {
-            alert("Producto agregado al carrito");
+            Swal.fire({
+                title: "Producto agregado correctamente",
+                icon: "success",
+                timer: 2000, // Se cierra en 2 segundos
+                timerProgressBar: true, // Muestra barra de progreso
+                showConfirmButton: false // Oculta el botón de "Aceptar"
+              });
         },
         error: function () {
-            alert("Hubo un error.");
+            Swal.fire({
+                title: "Hubo un error",
+                icon: "alert",
+                timer: 2000, // Se cierra en 2 segundos
+                timerProgressBar: true, // Muestra barra de progreso
+                showConfirmButton: false // Oculta el botón de "Aceptar"
+              });
         },
     });
 });
@@ -39,7 +51,8 @@ $(".btn_eliminar").on("click", function (e) {
         }),
         contentType: "application/json",
         success: function (response) {
-            alert(response.mensaje);
+
+            // alert(response.mensaje);
             filaProducto.remove();
         },
         error: function (response) {
@@ -83,22 +96,7 @@ $(".btn_disminuir").on("click", function (e) {
 });
 
 
-// Hace aparecer el titulo "Productos" de a una letra a la vez
-document.addEventListener('DOMContentLoaded', function () {
-    const text = "Productos";
-    const target = document.querySelector('.productos-titulo');
-    let index = 0;
 
-    function typeWriter() {
-        if (index < text.length) {
-            target.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-
-    typeWriter();
-});
 
 // Hace el efecto de carga en el boton
 document.addEventListener("DOMContentLoaded", () => {

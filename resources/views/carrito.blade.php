@@ -11,7 +11,9 @@
         <div class="col-2 px-2 text-center">Cantidad</div>
         <div class="col-2 px-2 text-center">Precio</div>
         <div class="col-2 px-2 text-center">Total</div>
+        @auth
         <div class="col-3 px-2 text-center">Acciones</div>
+        @endauth
     </div>
     @foreach($productosEnCarrito as $item)
         <div class="row border align-items-center pt-2 pb-2" id="producto-{{ $item['producto']->id_producto }}">
@@ -24,6 +26,7 @@
             </div>
             <div class="col-2 text-center precio-producto">${{ $item['producto']->precio_producto }}</div>
             <div class="col-2 text-center total-producto">${{ $item['producto']->precio_producto * $item['cantidad'] }}</div>
+            @auth
             <div class="col-3 text-center  d-flex justify-content-center align-items-center">
                 <button 
                     type="button" 
@@ -32,7 +35,7 @@
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
-            
+            @endauth
         </div>
         
     @endforeach
