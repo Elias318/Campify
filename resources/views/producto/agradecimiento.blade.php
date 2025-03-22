@@ -19,6 +19,8 @@
                     $totalPrecio = 0;
                 @endphp
                 @foreach($productos as $item)
+                
+
                     <div class="datos-carrito-factura">
                         <p><strong>Producto:</strong> {{ $item['nombre'] }}</p>
                         <p><strong>Cantidad:</strong> {{ $item['cantidad'] }}</p>

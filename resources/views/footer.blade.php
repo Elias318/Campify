@@ -34,37 +34,25 @@
         <!-- Scripts de Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-        {{-- <!-- Scripts de Carrousel-->
-        <script src="{{ secure_asset('/js/carrousel.js') }}"></script>
-
-        <!-- Scripts de Carrito-->
-        <script src="{{ secure_asset('/js/scriptsCarrito.js') }}"></script>
-
-        <!-- Scripts de MeGustas-->
-        <script src="{{ secure_asset('/js/scriptsMeGustas.js') }}"></script>
-
-        <!-- Animaciones con JS -->
-        <script src="{{ secure_asset('js/animaciones.js') }}"></script>
-
-        <!-- Vista producto JS -->
-        <script src="{{ secure_asset('js/vistaproducto.js') }}"></script> --}}
 
          <!-- Scripts de Carrousel-->
-         <script src="{{asset('/js/carrousel.js') }}"></script>
+         <script src="{{secure_asset('/js/carrousel.js') }}"></script>
 
          <!-- Scripts de Carrito-->
-         <script src="{{asset('/js/scriptsCarrito.js') }}"></script>
+         <script src="{{secure_asset('/js/scriptsCarrito.js') }}"></script>
  
          <!-- Scripts de MeGustas-->
-         <script src="{{asset('/js/scriptsMeGustas.js') }}"></script>
+         <script src="{{secure_asset('/js/scriptsMeGustas.js') }}"></script>
  
          <!-- Animaciones con JS -->
-         <script src="{{asset('js/animaciones.js') }}"></script>
+         <script src="{{secure_asset('js/animaciones.js') }}"></script>
  
          <!-- Vista producto JS -->
-         <script src="{{asset('js/vistaproducto.js') }}"></script>
-         <script src="{{asset('https://cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
+         <script src="{{secure_asset('js/vistaproducto.js') }}"></script>
+         <script src="{{secure_asset('https://cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
 
+     
+      
 
     </body>
     

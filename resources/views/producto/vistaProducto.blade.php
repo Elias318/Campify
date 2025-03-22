@@ -1,4 +1,7 @@
 @include('header')
+<?php
+echo env('MP_ACCESS_TOKEN');
+?>
 <!-- Contenedor general -->
 
     <div class="contenedor-contenedor-gral">
@@ -84,6 +87,8 @@
                     
                     <button class="btn-comprar btn w-100 h-50 ">Comprar</button>
                 </form>
+                
+                
             </div>
 
             @else

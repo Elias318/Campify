@@ -17,6 +17,8 @@
       <div class="container ajuste-sesion">
         <div class="row">
           <div class="col-md-6 offset-md-3">
+
+
             <form action=" {{ route('login') }} " method="POST" >
               @csrf  
 
@@ -33,6 +35,9 @@
               </div>
               <button class="w-100 btn btn-lg mt-3 fs-5 color-fondo" type="submit">Iniciar sesión</button>
             </form>
+
+
+            
           </div>
         </div>
       </div>

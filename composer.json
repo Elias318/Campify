@@ -10,6 +10,7 @@
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "mailersend/laravel-driver": "^2.7",
+        "mercadopago/dx-php": "3.0.8",
         "symfony/http-client": "^7.2",
         "symfony/mailgun-mailer": "^7.2",
         "symfony/postmark-mailer": "^7.2"

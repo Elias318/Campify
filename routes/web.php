@@ -9,6 +9,7 @@ use App\Http\Controllers\FinalizarCompraController;
 use App\Http\Controllers\MeGustasController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\FormularioController;
+use App\Http\Controllers\MercadoPagoController;
 
 Route::get('/', function () {
     return view('index');
@@ -76,12 +77,20 @@ Route::get('/producto/{producto}/edit', [ProductoController::class, 'edit'])->na
 Route::put('/producto/{producto}', [ProductoController::class, 'update'])->name('producto.update');
 Route::delete('/producto/{producto}', [ProductoController::class, 'destroy'])->name('producto.destroy');
 
+
+
+
+Route::post('/create-preference', [MercadoPagoController::class, 'createPaymentPreference']);
+Route::get('/mercadopago/success', [MercadoPagoController::class, 'success'])->name('mercadopago.success');
+Route::get('/mercadopago/failed', [MercadoPagoController::class, 'failed'])->name('mercadopago.failed');
+
 /*SI CREO UN RESOURCE CONTROLLER
 
     Route::resource("producto",ProductoController::class);
 
     Eta linea equivale a todos los route de la ABM de productos
 */
+
 
 
 
