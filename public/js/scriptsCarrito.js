@@ -20,18 +20,18 @@ $(".formAgregarProducto").submit(function (event) {
             Swal.fire({
                 title: "Producto agregado correctamente",
                 icon: "success",
-                timer: 2000, // Se cierra en 2 segundos
-                timerProgressBar: true, // Muestra barra de progreso
-                showConfirmButton: false // Oculta el botón de "Aceptar"
+                timer: 2000,
+                timerProgressBar: true, 
+                showConfirmButton: false 
               });
         },
         error: function () {
             Swal.fire({
                 title: "Hubo un error",
                 icon: "alert",
-                timer: 2000, // Se cierra en 2 segundos
-                timerProgressBar: true, // Muestra barra de progreso
-                showConfirmButton: false // Oculta el botón de "Aceptar"
+                timer: 2000, 
+                timerProgressBar: true, 
+                showConfirmButton: false 
               });
         },
     });
