@@ -15,9 +15,7 @@ class CompraFinalizada extends Mailable
 
     public $productos;
     public $usuario;
-    /**
-     * Create a new message instance.
-     */
+  
     public function __construct($productos, $usuario)
     {
         $this-> productos =$productos;
@@ -26,7 +24,7 @@ class CompraFinalizada extends Mailable
     }
 
     /**
-     * Get the message envelope.
+     *Encabezado del mail.
      */
     public function envelope(): Envelope
     {

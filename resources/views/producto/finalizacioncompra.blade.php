@@ -7,6 +7,8 @@
                 <form class="form_agregar_producto" action="{{ route('finalizarcompra.agradecimiento') }}" method="POST" id="form_factura">
     
                     @csrf
+                    <input type="hidden" name="_previous" value="{{ url()->current() }}">
+
                     <div class="mb-3">
                         
                       <label for="nombre_factura" class="form-label">Nombre</label>

@@ -94,14 +94,16 @@ class FinalizarCompraController extends Controller
             'direccion_factura.required' => 'La dirección es obligatoria.',
             'direccion_factura.max' => 'La dirección no puede tener más de 255 caracteres.',
         ]);
+
+        
     
-        // Obtener los productos enviados por el formulario
+     
         $productos = $request->input('productos');
         
-        // Enviar el correo
+       
         Mail::to($request->input('email_factura'))->send(new CompraFinalizada($productos, $request->all()));
     
-        // Redirigir a la vista de agradecimiento
+        
         return view('producto.agradecimiento')->with([
             'datosComprador' => $request->all(),
             'productos' => $productos

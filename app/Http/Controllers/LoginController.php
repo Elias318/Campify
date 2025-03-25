@@ -36,7 +36,7 @@ class LoginController extends Controller
 
         User::create($data);
 
-        return response()->redirectTo("inicioSesion")->with("success", "Se registro con exito!");
+        return response()->redirectTo("/inicioSesion")->with("success", "Se registro con exito!");
     }
 
     public function login(Request $request)
